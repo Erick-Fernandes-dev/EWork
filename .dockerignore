@@ -1,0 +1,21 @@
+# .dockerignore
+
+# Ignorar o ambiente virtual local
+.venv
+/env/
+/venv/
+
+# Ignorar caches do Python e do pytest
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Ignorar pastas de dados gerados (serão gerenciadas por volumes)
+/data/
+/db/
+/silver/
+
+# Ignorar configurações de IDE e Git
+.vscode/
+.idea/
+.git/

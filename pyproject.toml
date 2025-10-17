@@ -1,0 +1,41 @@
+# pyproject.toml (VERSÃO FINAL E CORRIGIDA)
+
+[tool.poetry]
+name = "ework-desafio"
+version = "0.1.0"
+description = "Desafio Técnico EWork"
+authors = ["Erick-Fernandes-dev <erick.farias@dcx.ufpb.br>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+# --- DEPENDÊNCIAS DE PRODUÇÃO ---
+# (O que é necessário para a API rodar)
+[tool.poetry.dependencies]
+python = ">=3.12, <4.0"
+polars = { version = "^1.34.0", extras = ["pyarrow"] }
+pandera = "^0.26.1"
+pydantic = "^2.12.2"
+fastapi = "^0.119.0"
+uvicorn = "^0.37.0"
+python-dotenv = { version = "^1.1.1", extras = ["cli"] }
+sentence-transformers = "^5.1.1"
+faiss-cpu = "==1.8.0"
+pypdf = "^6.1.1"
+requests = "^2.32.5"
+langchain-text-splitters = "^0.3.11"
+numpy = "<2.0"
+loguru = "^0.7.3"
+
+# --- DEPENDÊNCIAS DE DESENVOLVIMENTO ---
+# (Ferramentas para teste, linting, etc.)
+# pytest, ruff, black e mypy foram REMOVIDOS da lista de produção acima
+# e agora vivem APENAS aqui.
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+ruff = "^0.14.0"
+black = "^25.9.0"
+mypy = "^1.18.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
